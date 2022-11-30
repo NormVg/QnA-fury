@@ -1,18 +1,9 @@
-from fastapi import FastAPI
-import uvicorn
 from ml import ml_app
-app = FastAPI()
+import time
 
-@app.get("/{que}")
-async def root(que):
-    ans = ml_app(que)
-    return {"answer":ans}
-#
-# @app.get("/app")
-# async def app():
-#     ans = ml_app("parents of Bruce Wayne ?")
-#     return ans
+s = time.time()
+ans = ml_app("parents of Bruce Wayne ?")
 
-
-if __name__ =="__main__":
-    uvicorn.run("main:app")
+e = time.time()
+print(e-s)
+print(ans)
