@@ -6,7 +6,7 @@ app = FastAPI()
 @app.get("/{que}")
 async def root(que):
     ans = ml_app(que)
-    return ans
+    return {"answer":ans}
 #
 # @app.get("/app")
 # async def app():
